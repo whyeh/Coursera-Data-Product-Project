@@ -5,6 +5,7 @@ shinyUI(
     fluidPage(
         titlePanel("Manufacturing Margin and Cost Calculator"),
         fluidRow(
+            h4("Input values for variables that do not change from job to job"),
             column(3, 
                    numericInput("labour", label = "Labour Hourly Rate", value = 25)
             ),
@@ -18,6 +19,7 @@ shinyUI(
         br(),
         
         fluidRow(
+            h4("Input values for variables pertaining to your first inquiry"),
             column(3,
                    # textInput("inquiry1", label = "Inquiry Code", value = "Shift #, Product ID, etc..."),
                    numericInput("price1", label = "Product Price to Customer", value = 3.48),
@@ -33,6 +35,7 @@ shinyUI(
                    actionButton("button1", "Show !")
             ), 
             column(8,
+                   h4("Revenue to Net Profit Waterfall Chart"),
                    plotOutput("plot1", height = 550),
                    h4("Expected and Actual Profit"),
                    tableOutput("results")

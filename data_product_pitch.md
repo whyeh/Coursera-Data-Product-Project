@@ -40,11 +40,13 @@ How Does it Work?
 ========================================================
 
 This app takes your inputs, for example:    
-```{r, eval=FALSE}
+
+```r
 numericInput("price1", label = "Product Price to Customer", value = 3.48),
 ```
 and calculate output based on cost-weighted OEE model.  Shown below are calculations for losses:
-```{r, eval=FALSE}
+
+```r
 downtime.loss = -1 * downtime*(prorate + indirect.min)
 performance.loss = -1 * (production.time - ideal.time)*(prorate + indirect.min)
 quality.loss = -1 * (material*NG + direct*NG + ((NG*ct)/60)*(prorate + indirect.min)) 
