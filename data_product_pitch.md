@@ -36,18 +36,18 @@ Reads from left to right -- first bar of the chart shows the revenue of the job 
 Table:  
 In this table, negative values indicate money lost whereas positive values indicate money gained (e.g. for Difference from Expected Profit, negative value means that the actual profit is less than expected).  
 
-How Does it Work?
+Example Result
 ========================================================
+Here are information you could get from this app!  
 
-This app takes your inputs, for example:    
 
-```r
-numericInput("price1", label = "Product Price to Customer", value = 3.48),
 ```
-and calculate output based on cost-weighted OEE model.  Shown below are calculations for losses:
-
-```r
-downtime.loss = -1 * downtime*(prorate + indirect.min)
-performance.loss = -1 * (production.time - ideal.time)*(prorate + indirect.min)
-quality.loss = -1 * (material*NG + direct*NG + ((NG*ct)/60)*(prorate + indirect.min)) 
+            Result   Values Percent.of.Revenue
+1          Revenue  4412.64             100.00
+2    Expected Cost -3743.92              84.85
+3  Expected Profit   710.48              16.10
+4 Additional Costs  -388.58               8.81
+5   Actual Profits   280.14               6.35
 ```
+
+From this app, you could clearly see what is the actual profit from a manufacturing job.  You will be able to gain insights to additional costs so you could focus on improvement plans to maximize your profit.  You will not need to include crazy overhead in your budget ever again!

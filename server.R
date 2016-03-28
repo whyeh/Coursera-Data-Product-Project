@@ -82,7 +82,7 @@ calc_results <- function(labour, indirect, price, material, direct, num.operator
     prorate = (duration / (duration - planned))*labour.min*num.operators
     
     # Calculate numbers
-    revenue = price*produced
+    revenue = price*(produced - NG)
     revenue = round(revenue, 2)
     ideal.cost = -1 * (material*(produced-NG) + direct*(produced-NG) + ideal.time.cost*(prorate + indirect.min))
     ideal.cost = round(ideal.cost, 2)
@@ -96,12 +96,11 @@ calc_results <- function(labour, indirect, price, material, direct, num.operator
     net = round(net, 2)
     expected = revenue + ideal.cost
     loss.total = downtime.loss + performance.loss + quality.loss
-    differences = net - expected 
     
     # Create table df
     results <- data.frame(Result = c("Revenue", "Expected Cost", "Expected Profit", "Additional Costs", 
-                                           "Actual Profits", "Difference from Expected Profit"), 
-                            Values = c(revenue, ideal.cost, expected, loss.total, net, differences))
+                                           "Actual Profits"), 
+                            Values = c(revenue, ideal.cost, expected, loss.total, net))
     results$Percent.of.Revenue <- abs((results$Values / revenue)*100)
     
     return(results)

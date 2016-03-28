@@ -803,19 +803,19 @@ In this table, negative values indicate money lost whereas positive values indic
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>How Does it Work?</h3>
+<h3>Example Result</h3>
 <div class="slideContent" >
-<p>This app takes your inputs, for example:    </p>
+<p>Here are information you could get from this app!  </p>
 
-<pre><code class="r">numericInput(&quot;price1&quot;, label = &quot;Product Price to Customer&quot;, value = 3.48),
+<pre><code>            Result   Values Percent.of.Revenue
+1          Revenue  4412.64             100.00
+2    Expected Cost -3743.92              84.85
+3  Expected Profit   710.48              16.10
+4 Additional Costs  -388.58               8.81
+5   Actual Profits   280.14               6.35
 </code></pre>
 
-<p>and calculate output based on cost-weighted OEE model.  Shown below are calculations for losses:</p>
-
-<pre><code class="r">downtime.loss = -1 * downtime*(prorate + indirect.min)
-performance.loss = -1 * (production.time - ideal.time)*(prorate + indirect.min)
-quality.loss = -1 * (material*NG + direct*NG + ((NG*ct)/60)*(prorate + indirect.min)) 
-</code></pre>
+<p>From this app, you could clearly see what is the actual profit from a manufacturing job.  You will be able to gain insights to additional costs so you could focus on improvement plans to maximize your profit.  You will not need to include crazy overhead in your budget ever again!</p>
 
 </div>
 
